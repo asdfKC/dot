@@ -1,0 +1,105 @@
+{
+    "height": 34,
+    "spacing": 10,
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        "mpd",
+        "idle_inhibitor",
+        "pulseaudio",
+        "network",
+        "power-profiles-daemon",
+        "cpu",
+        "memory",
+        "backlight",
+        "battery",
+        "tray",
+        "custom/power"
+    ],
+
+    /* ---------------- WORKSPACES ---------------- */
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "disable-scroll": true,
+        "all-outputs": true
+    },
+
+    /* ---------------- WINDOW ---------------- */
+    "hyprland/window": {
+        "max-length": 25
+    },
+
+    /* ---------------- CENTER CLOCK ---------------- */
+    "clock": {
+    "format": "{:%H:%M | %b %d}",
+    "tooltip": false
+},
+
+    /* ---------------- MODULES ---------------- */
+    "cpu": { "format": "{usage}% " },
+    "memory": { "format": "{}% " },
+
+    "network": {
+        "format-wifi": "{essid} ",
+        "format-ethernet": "{ipaddr} ",
+        "format-disconnected": "offline"
+    },
+
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-icons": ["", "", ""]
+    },
+
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["","","","",""]
+    },
+
+    "backlight": {
+        "format": "{percent}%"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "format-icons": {
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+
+    "mpd": {
+        "format": "{stateIcon} {title}",
+        "state-icons": {
+            "playing": "",
+            "paused": ""
+        }
+    },
+
+    "tray": {
+        "spacing": 8
+    },
+
+    /* ---------------- POWER (wlogout) ---------------- */
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": false,
+        "on-click": "wlogout"
+    }
+}

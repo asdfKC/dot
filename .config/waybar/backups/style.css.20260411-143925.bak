@@ -1,0 +1,105 @@
+/* ---------------- GLOBAL ---------------- */
+* {
+    font-family: FontAwesome, sans-serif;
+    font-size: 12px;
+}
+
+/* ---------------- FLOATING BAR (FIXED TOP GAP) ---------------- */
+window#waybar {
+    background: transparent;
+
+    margin-top: 18px;   /* 🔥 FIX: no longer touching top */
+    margin-left: 16px;
+    margin-right: 16px;
+
+    padding: 6px 10px;
+}
+
+/* ---------------- WORKSPACES ---------------- */
+#workspaces button {
+    background: rgba(25,25,40,0.75);
+    color: #ccc;
+
+    padding: 4px 10px;
+    margin: 0 4px;
+
+    border-radius: 999px;
+
+    border: 1px solid rgba(180,120,255,0.25);
+}
+
+#workspaces button.active {
+    background: rgba(180,120,255,0.85);
+    color: white;
+    box-shadow: 0 0 10px rgba(180,120,255,0.7);
+}
+
+/* ---------------- WINDOW ---------------- */
+#window {
+    background: rgba(25,25,40,0.75);
+    padding: 4px 12px;
+    margin-left: 8px;
+    border-radius: 999px;
+}
+
+/* ---------------- CENTER CLOCK (MAIN FOCUS) ---------------- */
+#clock {
+    background: rgba(40,30,70,0.95);
+
+    padding: 4px 16px;
+
+    border-radius: 999px;
+
+    border: 1px solid rgba(180,120,255,0.5);
+
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* ---------------- RIGHT MODULES ---------------- */
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#battery,
+#backlight,
+#idle_inhibitor,
+#power-profiles-daemon,
+#mpd,
+#tray,
+#custom-power {
+    background: rgba(25,25,40,0.75);
+
+    padding: 4px 10px;
+    margin: 0 6px;
+
+    border-radius: 999px;
+
+    border: 1px solid rgba(180,120,255,0.2);
+
+    transition: all 0.2s ease;
+}
+
+/* ---------------- HOVER GLOW ---------------- */
+#cpu:hover,
+#memory:hover,
+#network:hover,
+#pulseaudio:hover,
+#battery:hover,
+#backlight:hover,
+#idle_inhibitor:hover,
+#power-profiles-daemon:hover,
+#mpd:hover,
+#tray:hover,
+#custom-power:hover,
+#window:hover,
+#clock:hover {
+    background: rgba(60,40,90,0.85);
+    box-shadow: 0 0 12px rgba(180,120,255,0.6);
+}
+
+/* ---------------- POWER BUTTON ---------------- */
+#custom-power {
+    color: #ff6bd6;
+    font-size: 14px;
+}

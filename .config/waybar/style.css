@@ -1,0 +1,121 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", "Noto Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+#workspaces,
+#clock,
+#mpd,
+#pulseaudio,
+#custom-bluetooth,
+#network,
+#cpu,
+#memory,
+#battery,
+#idle_inhibitor, /* Added here to give it the capsule container styles */
+#tray,
+#custom-power {
+    color: #f5edff;
+    background: rgba(10, 6, 20, 0.78);
+    border: 1px solid rgba(168, 85, 247, 0.62);
+    border-radius: 999px;
+    padding: 4px 12px;
+    margin: 0 8px;
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.26);
+    transition: background-color 180ms ease, border-color 180ms ease, box-shadow 220ms ease, color 180ms ease;
+}
+
+#clock {
+    padding: 6px 18px;
+    margin: 0 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    border-color: rgba(168, 85, 247, 0.8);
+    box-shadow: 0 0 16px rgba(168, 85, 247, 0.35);
+    transition: background-color 180ms ease, border-color 180ms ease, box-shadow 220ms ease;
+}
+
+#clock:hover {
+    background: rgba(46, 22, 82, 0.9);
+    border-color: rgba(196, 132, 255, 0.95);
+    box-shadow: 0 0 22px rgba(196, 132, 255, 0.5);
+}
+
+#workspaces {
+    padding: 3px 7px;
+}
+
+#workspaces button {
+    color: rgba(245, 237, 255, 0.68);
+    background: transparent;
+    border: none;
+    border-radius: 999px;
+    padding: 2px 9px;
+    margin: 0 2px;
+    transition: background-color 160ms ease, color 160ms ease, box-shadow 200ms ease;
+}
+
+#workspaces button.active {
+    color: #ffffff;
+    background: rgba(168, 85, 247, 0.34);
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+}
+
+#workspaces button.urgent {
+    color: #ffffff;
+    background: rgba(255, 64, 162, 0.45);
+    box-shadow: 0 0 14px rgba(255, 64, 162, 0.42);
+}
+
+#workspaces button:hover,
+#mpd:hover,
+#pulseaudio:hover,
+#custom-bluetooth:hover,
+#network:hover,
+#cpu:hover,
+#memory:hover,
+#battery:hover,
+#idle_inhibitor:hover, /* Added hover background effect */
+#tray:hover,
+#custom-power:hover {
+    background: rgba(168, 85, 247, 0.2);
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#battery.warning,
+#network.disconnected,
+#pulseaudio.muted {
+    border-color: rgba(255, 134, 220, 0.9);
+    background: rgba(74, 24, 97, 0.82);
+    box-shadow: 0 0 18px rgba(255, 134, 220, 0.45);
+}
+
+/* Custom styles for when the idle inhibitor is clicked and turned ON */
+#idle_inhibitor.activated {
+    border-color: rgba(255, 134, 220, 0.9);
+    background: rgba(74, 24, 97, 0.82);
+    color: #ffcdfa;
+    box-shadow: 0 0 18px rgba(255, 134, 220, 0.45);
+}
+
+#custom-power {
+    color: #ffcdfa;
+    padding-left: 12px;
+    padding-right: 12px;
+}

@@ -1,0 +1,104 @@
+{
+  "output": "DP-4",
+  "layer": "top",
+  "position": "top",
+  "height": 38,
+  "spacing": 12,
+  "margin-top": 10,
+  "margin-left": 14,
+  "margin-right": 14,
+
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["mpd", "pulseaudio", "custom/bluetooth", "network", "cpu", "memory", "battery", "idle_inhibitor", "tray", "custom/power"],
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{name}",
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    }
+  },
+
+  "clock": {
+    "format": "{:%I:%M %p | %a %d %b}",
+    "tooltip": false
+  },
+
+  "mpd": {
+    "format": "  {artist} - {title}",
+    "format-disconnected": "  offline",
+    "format-stopped": "  paused",
+    "max-length": 30,
+    "tooltip": false
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": " muted",
+    "format-icons": {
+      "default": ["", ""]
+    },
+    "tooltip": false
+  },
+
+  "custom/bluetooth": {
+    "exec": "/home/kushcool/.config/waybar/scripts/bluetooth-status.sh",
+    "return-type": "json",
+    "interval": 5,
+    "on-click": "/home/kushcool/.config/waybar/scripts/bluetooth-menu.sh",
+    "on-click-right": "blueman-manager",
+    "tooltip": true
+  },
+
+  "network": {
+    "format-wifi": "  {signalStrength}%",
+    "format-ethernet": "󰈀  eth",
+    "format-disconnected": "󰖪  offline",
+    "on-click": "/home/kushcool/.config/waybar/scripts/show-ip.sh",
+    "tooltip": false
+  },
+
+  "cpu": {
+    "format": "  {usage}%",
+    "tooltip": false
+  },
+
+  "memory": {
+    "format": "  {percentage}%",
+    "tooltip": false
+  },
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "tooltip": false
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": " ",
+      "deactivated": " "
+    },
+    "tooltip": false
+  },
+
+  "tray": {
+    "spacing": 10,
+    "icon-size": 14
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "wlogout"
+  }
+}
