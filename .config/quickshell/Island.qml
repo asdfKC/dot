@@ -1564,9 +1564,12 @@ PanelWindow {
             }
             // Cleanly ends the Hyprland session itself (not just closing
             // windows) — the compositor exiting is what actually logs the
-            // session out.
+            // session out. This fork of Hyprland is Lua-configured, so
+            // `dispatch` takes a Lua expression (hl.dsp.<name>(...)) rather
+            // than a bare classic dispatcher name — plain "exit" is not a
+            // valid argument and silently no-ops.
             function logOutSession() {
-                Quickshell.execDetached(["hyprctl", "dispatch", "exit"]);
+                Quickshell.execDetached(["hyprctl", "dispatch", "hl.dsp.exit()"]);
             }
             function rebootSession() {
                 Quickshell.execDetached(["systemctl", "reboot"]);
